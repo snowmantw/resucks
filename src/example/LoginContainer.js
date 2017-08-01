@@ -21,10 +21,6 @@ import Login from './Login.js'
  * In this case it should be a full class container, in order to catch the lifecycle of
  * mounting and unmounting to bridge and un-bridge the signal.
  *
- * If this is too complicated, Resucks probide a builder for building these service containers.
- * In either way, a pure service container must be declared and have user containers nested.
- * This is also the way to build a multiple-effect stack in declarative programming:
- *
  * <App>
  * <Geolocation>
  *   <ShowGeolocation />

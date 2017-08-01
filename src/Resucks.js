@@ -26,7 +26,7 @@ class Resucks {
   }
 
   emit(container, emitSignal) {
-    if (!emitSignal) { throw new Error('Cannot emit undefined signal'); }
+    if (!container || !emitSignal) { throw new Error('Cannot emit undefined signal'); }
 
     const {name, host, payload} = emitSignal;
 

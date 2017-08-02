@@ -100,7 +100,11 @@ class Resucks {
     const queried = [];
     for (let { keyPath } of queries) {
       let rr = store.getIn(keyPath);
-      queried.unshift(rr.toJS());
+      if (!rr.toJS) {
+        console.warn('Not immutable object in store', rr)
+      } else {
+        queried.unshift(rr.toJS());
+      }
     }
     return queried;
   }

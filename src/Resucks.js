@@ -78,8 +78,10 @@ class Resucks {
       } else if (effect) {
         // Effect renderer.
         const unwrappedResult = await effect(effect.renderer);
-        nextSignal.payload = unwrappedResult;
-        if (nextSignal) { this.emit(_containerInstance, nextSignal); }
+        if (nextSignal) {
+          nextSignal.payload = unwrappedResult;
+          this.emit(_containerInstance, nextSignal);
+        }
       }
     });
   }
